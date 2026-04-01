@@ -149,9 +149,9 @@ const DataTable = () => {
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Moving Date
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                {/* <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Signature
-                </th>
+                </th> */}
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-100">
@@ -190,7 +190,7 @@ const DataTable = () => {
                   <td className="px-4 py-3 text-sm text-gray-900">
                     {formatDate(item.moving_date)}
                   </td>
-                  <td className="px-4 py-3 text-sm text-gray-900">
+                  {/* <td className="px-4 py-3 text-sm text-gray-900">
                     {item.signature ? (
                       <button
                         className="px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 transition-colors"
@@ -201,7 +201,7 @@ const DataTable = () => {
                     ) : (
                       "N/A"
                     )}
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>
