@@ -297,11 +297,11 @@ const DataTable = () => {
                     {formatDate(item.moving_date)}
                   </span>
                 </div>
-                <div className="flex justify-between py-1 items-center">
-                  <span className="text-xs font-medium text-gray-500">
+                {/* <div className="flex justify-between py-1 items-center"> */}
+                {/* <span className="text-xs font-medium text-gray-500">
                     Signature:
-                  </span>
-                  {item.signature ? (
+                  </span> */}
+                {/* {item.signature ? (
                     <button
                       className="px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 transition-colors"
                       onClick={() => window.open(item.signature!, "_blank")}
@@ -310,8 +310,8 @@ const DataTable = () => {
                     </button>
                   ) : (
                     <span className="text-xs text-gray-900">N/A</span>
-                  )}
-                </div>
+                  )} */}
+                {/* </div> */}
               </div>
             )}
           </div>
