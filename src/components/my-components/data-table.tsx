@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { format } from "date-fns";
 
 interface DataItem {
   email: string;
@@ -15,6 +16,7 @@ interface DataItem {
   payment_method: string;
   moving_date: string;
   signature: string | null;
+  created_at: string;
 }
 
 const DataTable = () => {
@@ -149,9 +151,9 @@ const DataTable = () => {
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Moving Date
                 </th>
-                {/* <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Signature
-                </th> */}
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Date
+                </th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-100">
@@ -190,18 +192,9 @@ const DataTable = () => {
                   <td className="px-4 py-3 text-sm text-gray-900">
                     {formatDate(item.moving_date)}
                   </td>
-                  {/* <td className="px-4 py-3 text-sm text-gray-900">
-                    {item.signature ? (
-                      <button
-                        className="px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 transition-colors"
-                        onClick={() => window.open(item.signature!, "_blank")}
-                      >
-                        View
-                      </button>
-                    ) : (
-                      "N/A"
-                    )}
-                  </td> */}
+                  <td className="px-4 py-3 text-sm text-gray-900">
+                    {format(item.created_at, "MMM d, yyyy")}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -297,11 +290,14 @@ const DataTable = () => {
                     {formatDate(item.moving_date)}
                   </span>
                 </div>
-                {/* <div className="flex justify-between py-1 items-center"> */}
-                {/* <span className="text-xs font-medium text-gray-500">
-                    Signature:
-                  </span> */}
-                {/* {item.signature ? (
+                <div className="flex justify-between py-1 items-center">
+                  <span className="text-xs font-medium text-gray-500">
+                    Date:
+                  </span>
+                  <span className="text-xs text-gray-900">
+                    {format(item.created_at, "MMM d, yyyy")}
+                  </span>
+                  {/* {item.signature ? (
                     <button
                       className="px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 transition-colors"
                       onClick={() => window.open(item.signature!, "_blank")}
@@ -311,7 +307,7 @@ const DataTable = () => {
                   ) : (
                     <span className="text-xs text-gray-900">N/A</span>
                   )} */}
-                {/* </div> */}
+                </div>
               </div>
             )}
           </div>
